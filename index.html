@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITMD 441 - Lab6 - Weather App</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body> 
+    <h1 id="title">Weather App</h1>
+    <h2 id="idk">Testing......</h2>
+    <div id="center">
+        <div id="dd">
+            <form action="/action_page.php">
+                <label for="dropdown">Location:</label>
+                <select id="dropdown" name="dropdown">
+                  <option value="CHI" selected>Chicago, Illinois</option>
+                  <option value="NYC">New York City, New York</option>
+                  <option value="LA">Los Angeles, California</option>
+                  <option value="MIA">Miami, Florida</option>
+                  <option value="SF">San Francisco, California</option>
+                  <option value="LV">Las Vegas, Nevada</option>
+                  <option value="SEA">Seattle, Washington</option>
+                  <option value="AUS">Austin, Texas</option>
+                  <option value="DEN">Denver, Colorado</option>
+                  <option value="ATL">Atlanta, Georgia</option>
+                </select>
+              </form>
+        </div>
+        <div id="main">
+            <div id="today">
+                <h1>Today</h1>
+                <p id="date1"></p>
+                <div id="sr">
+                    <h2>Sunrise</h2>
+                    <img src="sr.png">
+                    <h3 id="sr-time1">6:15 am</h3>
+                </div>
+                <div id="ss">
+                    <h2>Sunset</h2>
+                    <img src="ss.png">
+                    <h3 id="ss-time1">6:15 am</h3>
+                </div>
+                <p id="dawn1">Dawn: </p>
+                <p id="dusk1">Dusk: </p>
+                <p id="daylength1">Day Length: </p>
+                <p id="sn1">Solar Noon: </p>
+                <p id="tz1">Time Zone: </p>
+            </div>
+            <div id="tmr">
+                <h1>Tomorrow</h1>
+                <p id="date2">Monday, April 21, 2025</p>
+                <div id="sr">
+                    <h2>Sunrise</h2>
+                    <img src="sr.png">
+                    <h3 id="sr-time2">6:15 am</h3>
+                </div>
+                <div id="ss">
+                    <h2>Sunset</h2>
+                    <img src="ss.png">
+                    <h3 id="ss-time2">6:15 am</h3>
+                </div>
+                <p id="dawn2">Dawn: </p>
+                <p id="dusk2">Dusk: </p>
+                <p id="daylength2">Day Length: </p>
+                <p id="sn2">Solar Noon: </p>
+                <p id="tz2">Time Zone: </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
