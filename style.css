@@ -1,10 +1,42 @@
 html {
     background-color:  #7248B9;
+    font-family: "Share Tech Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1em;
 }
 
 #title{
     color: white;
     text-align: center;
+    font-family: "Galada", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2em;
+}
+
+h1{
+    font-size: 2em;
+}
+
+h2{
+    font-family: "Galada", cursive;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+h3{
+    font-size: 1.1em;
+    color:#7248B9;
+}
+
+p{
+    border-bottom-style: solid;
+    border-color: #7248B9;
+    padding: 8px;
+    font-size: 1.2em;
 }
 
 img{
