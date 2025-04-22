@@ -39,6 +39,15 @@ p{
     font-size: 1.2em;
 }
 
+a{
+    color: #f7edffff;
+}
+
+#credit{
+    color: white;
+    text-align: center;
+}
+
 img{
     width: 100px;
     height: 100px;
