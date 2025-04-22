@@ -7,50 +7,45 @@ html {
     text-align: center;
 }
 
-#center{
-    display: block;
-    width: 1000px;
-    height: 1000px;
-    margin: auto;   
-    background-color: white;
-}
-
-#today, #tmr{
-    display: block;
-    background-color: #f7edffff;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 20px;
-    width: 665px;
-    clear: both;
-    overflow: auto;
-}
-
-#dd{
-    width: 175px;
-    background-color: #f7edffff;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 20px;
-    display: block;
-    float: left;
-}
-
-#main{
-    display: block;
-    float: left;
-    width: 595px;
-}
-
 img{
     width: 100px;
     height: 100px;
 }
 
-#ss, #sr{
-    display: block;
-    float: left;
-    width: 40%;
-    margin: 5%;
-    text-align: center;
+#center{
+    display: flex; /*Creates a flex container — children (#dd, #main) are now flex items*/
+    align-items: flex-start; /*Makes sure both items align at the top (instead of stretching to same height)*/
+    justify-content: center; /*Centers both #dd and #main horizontally inside the container*/
+    margin: auto; /*Horizontally centers the whole layout*/  
+    max-width: 1000px; /*limits how wide it gets on large screens*/
+    width: 100%;
+    flex-wrap: wrap; 
+    gap: 20px;
 }
+
+#dd{ 
+    background-color: #f7edffff;
+    border-radius: 10px;
+    padding: 20px;
+    height: auto;
+    flex-shrink: 0;
+}
+
+#main{
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#today, #tmr{
+    background-color: #f7edffff;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+#container-sr-ss{
+    display: flex;
+    justify-content: space-around;
+}
+
