@@ -6,7 +6,10 @@ function dropdown(){
   }
 
   updateValue();
-  dropdown.onchange = updateValue;
+  dropdown.onchange = function(){
+    updateValue();
+  }
+  
 }
 
 
@@ -56,12 +59,19 @@ function changeLocation() {
   .then(response => response.json())
   .then(data => {
     let value = document.getElementById("dropdown").value;
-    
-    let test = data.results.date;
-    let d = new Date(test);
-    let text = d.toString();
-    document.querySelector('#date1').innerHTML = text
-    
+
+    let dateStr = data.results.date;
+    let [year, month, day] = dateStr.split("-");
+    let dateObj = new Date(year, month - 1, day); // Local time
+
+    let formatted = dateObj.toLocaleDateString("en-US", {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric"
+    });
+
+    document.querySelector('#date1').innerHTML = formatted;
     document.querySelector('#sr-time1').innerHTML = data.results.sunrise
     document.querySelector('#ss-time1').innerHTML = data.results.sunset
     document.querySelector('#dawn1').innerHTML = "Dawn: " + data.results.dawn
@@ -79,12 +89,19 @@ function changeLocation() {
   .then(response => response.json())
   .then(data => {
     let value = document.getElementById("dropdown").value;
+
+    let dateStr = data.results.date;
+    let [year, month, day] = dateStr.split("-");
+    let dateObj = new Date(year, month - 1, day); // Local time
+
+    let formatted = dateObj.toLocaleDateString("en-US", {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric"
+    });
     
-    let test = data.results.date;
-    let d = new Date(test);
-    let text = d.toString();
-    document.querySelector('#date2').innerHTML = text
-    
+    document.querySelector('#date2').innerHTML = formatted;
     document.querySelector('#sr-time2').innerHTML = data.results.sunrise
     document.querySelector('#ss-time2').innerHTML = data.results.sunset
     document.querySelector('#dawn2').innerHTML = "Dawn: " + data.results.dawn
