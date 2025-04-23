@@ -1,16 +1,10 @@
 function dropdown(){
   let dropdown = document.getElementById("dropdown");
 
-  function updateValue() {
+  dropdown.onchange = function(){
     changeLocation();
   }
-
-  updateValue();
-  dropdown.onchange = function(){
-    updateValue();
-  }
-  
-}
+} //function changes values everytime the dropdown value is changed
 
 
 function changeLocation() {
@@ -51,7 +45,7 @@ function changeLocation() {
     longitude = -84.37282851153607;
   }
 
-  let urlToday = `https://api.sunrisesunset.io/json?lat=${latitude}&lng=${longitude}&date=today`;
+  let urlToday = `https://api.sunrisesunset.io/json?lat=${latitude}&lng=${longitude}&date=today`; //today is a predefined value for todays date
   let urlTomorrow = `https://api.sunrisesunset.io/json?lat=${latitude}&lng=${longitude}&date=tomorrow`;
 
 
@@ -82,9 +76,6 @@ function changeLocation() {
   })
   .catch(error => console.error('Error:', error))
 
-
-
-
   fetch(urlTomorrow)
   .then(response => response.json())
   .then(data => {
@@ -111,7 +102,7 @@ function changeLocation() {
     document.querySelector('#tz2').innerHTML = "Time Zone: " + data.results.timezone
   })
   .catch(error => console.error('Error:', error))
-}
+} //function displays data for each dropdown option
 
 
   window.addEventListener("load", () => {
